@@ -17,6 +17,11 @@ void* count_lines(void* filename) {
     int *count = (int*) malloc(sizeof(int));
     *count = 0;
 
+    if (count == NULL) {
+        perror("Error in malloc");
+        exit(EXIT_FAILURE);
+    }
+
     while (fgets(buf, 2048, fp) != NULL) {
         (*count) += 1;
     }
@@ -57,7 +62,7 @@ int main(int argc, char *argv[]) {
         free(return_val);
     }
 
-    printf("Total lines: %d\n", total_lines);
+    printf("================\nTotal lines: %d\n", total_lines);
 
     exit(EXIT_SUCCESS);
 }
