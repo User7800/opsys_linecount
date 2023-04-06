@@ -1,0 +1,5 @@
+*.log
+*.o
+*.bin
+junk/
+.vscode/
